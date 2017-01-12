@@ -7,7 +7,7 @@ use initialize\IOCInitializeCommand;
 
 $initializer = new Initializer();
 
-$initializer->addCommand(new AOPInitializeCommand(__DIR__));
+// $initializer->addCommand(new AOPInitializeCommand(__DIR__));
 $initializer->addCommand(new IOCInitializeCommand(__DIR__));
 
 $initializer->run();
