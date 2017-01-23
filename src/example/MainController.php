@@ -24,18 +24,16 @@ class MainController
         $this->log = new Logger(get_class($this));
     }
 
-    public function index(Request $request, ValidatorInterface $validator,
-		UserDAO $dao)
+    public function index(Request $request, ValidatorInterface $validator/*,
+		UserDAO $dao*/)
     {
 		// I('get');
 		// D('UserModel')->find()
         $registration = new Registration();
         $violation = $validator->validate($registration);
-		$user = $dao->findUser($registration->userID);
+		// $user = $dao->findUser($registration->userID);
         // var_dump($violation);
         echo $this->request->get("username");
         $this->log->info($this->example->sayHello());
-
-		return new RegistrationViewModel()
     }
 }
