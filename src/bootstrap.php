@@ -11,3 +11,5 @@ $initializer->addCommand(new AOPInitializeCommand(__DIR__));
 $initializer->addCommand(new IOCInitializeCommand(__DIR__));
 
 $initializer->run();
+
+require_once('config/routes.php');
