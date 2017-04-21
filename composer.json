@@ -17,7 +17,10 @@
         "container-interop/container-interop": "^1.1",
         "symfony/validator": "^3.2",
         "maximebf/events": ">=1.0.0",
-        "phroute/phroute": "^2.1"
+        "phroute/phroute": "^2.1",
+        "vlucas/phpdotenv": "^2.4",
+        "illuminate/config": "^5.4",
+        "doctrine/orm": "^2.5"
         
     },
     "autoload": {
