@@ -1,5 +1,6 @@
 <?php
 require_once('vendor/autoload.php');
+define('WEB_ROOT', __DIR__ . "/..");
 
 use initialize\Initializer;
 use initialize\AOPInitializeCommand;
@@ -30,3 +31,8 @@ $conn = array(
 $entityManager = EntityManager::create($conn, $config);
 
 // require_once('config/routes.php');
+
+$container->set(EntityManager::class, $entityManager);
+
+if ('cli' != PHP_SAPI)
+    include_once(WEB_ROOT . "/config/routes.php");

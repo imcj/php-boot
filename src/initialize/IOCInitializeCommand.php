@@ -11,6 +11,8 @@ use Symfony\Component\Validator\Validation;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
+$container = null;
+
 class IOCInitializeCommand implements InitializeCommand
 {
 	public $cacheDirPath;
@@ -22,7 +24,9 @@ class IOCInitializeCommand implements InitializeCommand
 
 	public function execute()
 	{
+		global $container;
 		$builder = new \DI\ContainerBuilder();
+		$builder->addDefinitions(WEB_ROOT . '/config/container.php');
 		$builder->setDefinitionCache(new \Doctrine\Common\Cache\ArrayCache());
 		$builder->writeProxiesToFile(true, $this->cacheDirPath . '/../var/cache/ioc');
 		$builder->useAnnotations(true);

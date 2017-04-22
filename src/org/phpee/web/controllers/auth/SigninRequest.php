@@ -1,5 +1,5 @@
 <?php
-namespace example;
+namespace org\phpee\web\controllers\auth;
 
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  *
  */
-class Registration
+class SigninRequest
 {
     /**
      * @Assert\NotNull
@@ -16,14 +16,8 @@ class Registration
     public $username;
 
 	/**
-     * Assert\NotNull
+     * @Assert\NotNull
      * @var string 密码
      */
     public $password;
-
-	/**
-     * Assert\NotNull
-     * @var string 重复输入密码
-     */
-    public $passwordAgain;
 }
